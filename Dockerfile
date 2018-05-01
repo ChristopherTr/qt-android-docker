@@ -47,7 +47,7 @@ RUN apt-get install -y \
 	&& apt-get clean
 
 # Download/Install Android-NDK
-RUN curl -LS https://dl.google.com/android/repository/android-ndk-r16b-linux-x86_64.zip -o android-ndk.zip \
+RUN curl -LS https://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip -o android-ndk.zip \
 	&& unzip -q android-ndk.zip -d /opt/ \
 	&& rm android-ndk.zip
 
@@ -59,7 +59,7 @@ RUN curl -LS https://dl.google.com/android/repository/sdk-tools-linux-3859397.zi
 	&& cd /opt/android/sdk/tools/bin && yes | ./sdkmanager --licenses \
 	&& ./sdkmanager "platform-tools" "platforms;android-25" "build-tools;25.0.3" \
 	&& yes | ./sdkmanager --licenses
- 
+
 # Abhängigkeiten für QT-Installer
 RUN apt-get install -y \
 	libgl1-mesa-glx \
