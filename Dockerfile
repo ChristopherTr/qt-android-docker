@@ -1,7 +1,7 @@
 FROM debian:latest
 
 ENV ANDROID_HOME=/opt/android/sdk/
-ENV ANDROID_NDK_ROOT=/opt/android-ndk-r16b/
+ENV ANDROID_NDK_ROOT=/opt/android-ndk-r10e/
 ENV ANDROID_NDK_HOST=linux-x86_64
 ENV ANDROID_NDK_TOOLCHAIN_PREFIX=arm-linux-androideabi
 ENV ANDROID_NDK_TOOLCHAIN_VERSION=4.9
