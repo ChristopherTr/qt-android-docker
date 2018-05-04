@@ -57,7 +57,7 @@ RUN curl -LS https://dl.google.com/android/repository/sdk-tools-linux-3859397.zi
 	&& unzip -q android-tools.zip -d /opt/android/sdk/ \
 	&& rm android-tools.zip \
 	&& cd /opt/android/sdk/tools/bin && yes | ./sdkmanager --licenses \
-	&& ./sdkmanager "platform-tools" "platforms;android-25" "build-tools;25.0.3" \
+	&& ./sdkmanager "platform-tools" "platforms;android-26" "build-tools;26.0.3" \
 	&& yes | ./sdkmanager --licenses
 
 # Abhängigkeiten für QT-Installer
@@ -67,7 +67,7 @@ RUN apt-get install -y \
 	&& apt-get clean
 
 # Download && Install Qt
-RUN curl -LS http://download.qt.io/official_releases/qt/5.9/5.9.3/qt-opensource-linux-x64-5.9.3.run -o qt-install.run \
+RUN curl -LS http://download.qt.io/official_releases/qt/5.9/5.9.5/qt-opensource-linux-x64-5.9.5.run -o qt-install.run \
 	&& chmod +x qt-install.run \
 	&& ./qt-install.run --script qt-install.qs --platform minimal -v \
 	&& rm qt-install.run

@@ -29,17 +29,19 @@ Controller.prototype.ComponentSelectionPageCallback = function() {
     var widget = gui.currentPageWidget();
 
     widget.selectAll();
-    //widget.selectComponent("qt.55.gcc_64");
+    widget.deselectComponent("qt.595.gcc_64");
+    widget.deselectComponent("qt.595.android_x86");
+
     //widget.selectComponent("qt.55.qtquickcontrols");
 
     widget.deselectComponent("qt.tools.qtcreator");
     // widget.deselectComponent("qt.55.qt3d");
     // widget.deselectComponent("qt.55.qtcanvas3d");
     // widget.deselectComponent("qt.55.qtlocation");
-    // widget.deselectComponent("qt.55.qtquick1");
-    // widget.deselectComponent("qt.55.qtscript");
+    widget.deselectComponent("qt.595.qtquick1");
+    widget.deselectComponent("qt.595.qtscript");
     // widget.deselectComponent("qt.55.qtwebengine");
-    // widget.deselectComponent("qt.extras");
+    widget.deselectComponent("qt.extras");
     widget.deselectComponent("qt.tools.doc");
     widget.deselectComponent("qt.tools.examples");
 
