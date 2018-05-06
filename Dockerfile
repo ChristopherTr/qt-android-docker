@@ -7,7 +7,7 @@ ENV ANDROID_NDK_TOOLCHAIN_PREFIX=arm-linux-androideabi
 ENV ANDROID_NDK_TOOLCHAIN_VERSION=4.9
 ENV ANDROID_NDK_TOOLS_PREFIX=arm-linux-androideabi
 ENV ANDROID_SDK_ROOT=/opt/android/sdk/
-ENV BUILDTOOLS_REVISION=25.0.3
+ENV BUILDTOOLS_REVISION=26.0.3
 
 ADD qt-install.qs /
 
@@ -69,7 +69,7 @@ RUN apt-get install -y \
 # Download && Install Qt
 RUN curl -LS http://download.qt.io/official_releases/qt/5.9/5.9.5/qt-opensource-linux-x64-5.9.5.run -o qt-install.run \
 	&& chmod +x qt-install.run \
-	&& ./qt-install.run --script qt-install.qs --platform minimal -v \
+    && ./qt-install.run --script qt-install.qs --platform minimal -v \
 	&& rm qt-install.run
 
 ENV PATH="/opt/Qt/5.9.5/android_armv7/bin:${PATH}"

@@ -1,14 +1,14 @@
 function Controller() {
-    installer.autoRejectMessageBoxes();
-    installer.setMessageBoxAutomaticAnswer("OverwriteTargetDirectory", QMessageBox.Yes);
-    installer.setMessageBoxAutomaticAnswer("stopProcessesForUpdates", QMessageBox.Ignore);
+
     installer.installationFinished.connect(function() {
-        gui.clickButton(buttons.NextButton);
-    })
+            gui.clickButton(buttons.NextButton);
+    });
+    installer.setMessageBoxAutomaticAnswer("OverwriteTargetDirectory", QMessageBox.Yes);
+    installer.setMessageBoxAutomaticAnswer("installationErrorWithRetry", QMessageBox.Ignore);
 }
 
 Controller.prototype.WelcomePageCallback = function() {
-    gui.clickButton(buttons.NextButton);
+    gui.clickButton(buttons.NextButton,1000);
 }
 
 Controller.prototype.CredentialsPageCallback = function() {
