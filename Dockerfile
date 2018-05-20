@@ -20,6 +20,7 @@ RUN apt-get install -y \
 	git \
 	g++ \
 	make \
+	ccache \
 	&& apt-get clean
 
 # Abhängigkeiten für QT-Installer
