@@ -7,7 +7,7 @@ ENV ANDROID_NDK_TOOLCHAIN_PREFIX=arm-linux-androideabi
 ENV ANDROID_NDK_TOOLCHAIN_VERSION=4.9
 ENV ANDROID_NDK_TOOLS_PREFIX=arm-linux-androideabi
 ENV ANDROID_SDK_ROOT=/opt/android/sdk/
-ENV BUILDTOOLS_REVISION=26.0.3
+ENV BUILDTOOLS_REVISION=28.0.3
 
 ADD qt-install.qs /
 
@@ -48,7 +48,7 @@ RUN apt-get install -y \
 	&& apt-get clean
 
 # Download/Install Android-NDK
-RUN curl -LS https://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip -o android-ndk.zip \
+RUN curl -LS https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip -o android-ndk.zip \
 	&& unzip -q android-ndk.zip -d /opt/ \
 	&& rm android-ndk.zip
 
@@ -58,7 +58,7 @@ RUN curl -LS https://dl.google.com/android/repository/sdk-tools-linux-3859397.zi
 	&& unzip -q android-tools.zip -d /opt/android/sdk/ \
 	&& rm android-tools.zip \
 	&& cd /opt/android/sdk/tools/bin && yes | ./sdkmanager --licenses \
-	&& ./sdkmanager "platform-tools" "platforms;android-26" "build-tools;26.0.3" \
+	&& ./sdkmanager "platform-tools" "platforms;android-28" "build-tools;28.0.3" \
 	&& yes | ./sdkmanager --licenses
 
 # Abhängigkeiten für QT-Installer
@@ -68,7 +68,7 @@ RUN apt-get install -y \
 	&& apt-get clean
 
 # Download && Install Qt
-RUN curl -LS http://download.qt.io/official_releases/qt/5.9/5.9.5/qt-opensource-linux-x64-5.9.5.run -o qt-install.run \
+RUN curl -LS http://download.qt.io/official_releases/qt/5.9/5.9.7/qt-opensource-linux-x64-5.9.7.run -o qt-install.run \
 	&& chmod +x qt-install.run \
     && ./qt-install.run --script qt-install.qs --platform minimal -v \
 	&& rm qt-install.run
