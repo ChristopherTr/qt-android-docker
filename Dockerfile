@@ -73,6 +73,6 @@ RUN curl -LS http://download.qt.io/official_releases/qt/5.9/5.9.7/qt-opensource-
     && ./qt-install.run --script qt-install.qs --platform minimal -v \
 	&& rm qt-install.run
 
-ENV PATH="/opt/Qt/5.9.5/android_armv7/bin:${PATH}"
+ENV PATH="/opt/Qt/5.9.7/android_armv7/bin:${PATH}"
 
 CMD ["/bin/bash"]
