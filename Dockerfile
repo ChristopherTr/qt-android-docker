@@ -58,7 +58,7 @@ RUN curl -LS https://dl.google.com/android/repository/sdk-tools-linux-3859397.zi
 	&& unzip -q android-tools.zip -d /opt/android/sdk/ \
 	&& rm android-tools.zip \
 	&& cd /opt/android/sdk/tools/bin && yes | ./sdkmanager --licenses \
-	&& ./sdkmanager "platform-tools" "platforms;android-28" "build-tools;28.0.3" \
+	&& yes y|./sdkmanager "platform-tools" "platforms;android-28" "build-tools;28.0.3" \
 	&& yes | ./sdkmanager --licenses
 
 # Abhängigkeiten für QT-Installer
