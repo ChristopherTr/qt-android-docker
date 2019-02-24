@@ -29,21 +29,22 @@ Controller.prototype.ComponentSelectionPageCallback = function() {
     var widget = gui.currentPageWidget();
 
     widget.selectAll();
-    widget.deselectComponent("qt.595.gcc_64");
-    widget.deselectComponent("qt.595.android_x86");
-
-    //widget.selectComponent("qt.55.qtquickcontrols");
-
+    
+    widget.deselectComponent("qt.qt5.5121.gcc_64");
+    widget.deselectComponent("qt.qt5.5121.android_x86");
+    widget.deselectComponent("qt.qt5.5121.android_arm64_v8a");
+    widget.deselectComponent("qt.qt5.5121.src");
+    widget.deselectComponent("qt.qt5.5121.qtcharts");
+    widget.deselectComponent("qt.qt5.5121.qtdatavis3d");
+    widget.deselectComponent("qt.qt5.5121.qtpurchasing");
+    widget.deselectComponent("qt.qt5.5121.qtvirtualkeyboard");
+    widget.deselectComponent("qt.qt5.5121.qtwebengine");
+    widget.deselectComponent("qt.qt5.5121.qtnetworkauth");
+    widget.deselectComponent("qt.qt5.5121.qtwebglplugin");
+    widget.deselectComponent("qt.qt5.5121.qtscript");
+    widget.deselectComponent("qt.qt5.5121.doc");
+    widget.deselectComponent("qt.qt5.5121.examples");
     widget.deselectComponent("qt.tools.qtcreator");
-    // widget.deselectComponent("qt.55.qt3d");
-    // widget.deselectComponent("qt.55.qtcanvas3d");
-    // widget.deselectComponent("qt.55.qtlocation");
-    widget.deselectComponent("qt.595.qtquick1");
-    widget.deselectComponent("qt.595.qtscript");
-    // widget.deselectComponent("qt.55.qtwebengine");
-    widget.deselectComponent("qt.extras");
-    widget.deselectComponent("qt.tools.doc");
-    widget.deselectComponent("qt.tools.examples");
 
     gui.clickButton(buttons.NextButton);
 }

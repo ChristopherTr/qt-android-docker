@@ -1,7 +1,7 @@
 FROM debian:latest
 
 ENV ANDROID_HOME=/opt/android/sdk/
-ENV ANDROID_NDK_ROOT=/opt/android-ndk-r17c/
+ENV ANDROID_NDK_ROOT=/opt/android-ndk-r19b/
 ENV ANDROID_NDK_HOST=linux-x86_64
 ENV ANDROID_NDK_TOOLCHAIN_PREFIX=arm-linux-androideabi
 ENV ANDROID_NDK_TOOLCHAIN_VERSION=4.9
@@ -48,7 +48,7 @@ RUN apt-get install -y \
 	&& apt-get clean
 
 # Download/Install Android-NDK
-RUN curl -LS https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip -o android-ndk.zip \
+RUN curl -LS https://dl.google.com/android/repository/android-ndk-r19b-linux-x86_64.zip -o android-ndk.zip \
 	&& unzip -q android-ndk.zip -d /opt/ \
 	&& rm android-ndk.zip
 
@@ -68,11 +68,11 @@ RUN apt-get install -y \
 	&& apt-get clean
 
 # Download && Install Qt
-RUN curl -LS http://download.qt.io/official_releases/qt/5.9/5.9.7/qt-opensource-linux-x64-5.9.7.run -o qt-install.run \
-	&& chmod +x qt-install.run \
-    && ./qt-install.run --script qt-install.qs --platform minimal -v \
+RUN curl -LS http://download.qt.io/official_releases/qt/5.12/5.12.1/qt-opensource-linux-x64-5.12.1.run -o qt-install.run \
+	&& chmod +x qt-install.run 
+RUn  ./qt-install.run --script qt-install.qs --platform minimal -v \
 	&& rm qt-install.run
 
-ENV PATH="/opt/Qt/5.9.7/android_armv7/bin:${PATH}"
+ENV PATH="/opt/Qt/5.12.1/android_armv7/bin:${PATH}"
 
 CMD ["/bin/bash"]
