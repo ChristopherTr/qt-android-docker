@@ -69,8 +69,8 @@ RUN apt-get install -y \
 
 # Download && Install Qt
 RUN curl -LS http://download.qt.io/official_releases/qt/5.12/5.12.1/qt-opensource-linux-x64-5.12.1.run -o qt-install.run \
-	&& chmod +x qt-install.run 
-RUn  ./qt-install.run --script qt-install.qs --platform minimal -v \
+	&& chmod +x qt-install.run \ 
+   && ./qt-install.run --script qt-install.qs --platform minimal -v \
 	&& rm qt-install.run
 
 ENV PATH="/opt/Qt/5.12.1/android_armv7/bin:${PATH}"
