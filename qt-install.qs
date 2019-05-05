@@ -34,13 +34,8 @@ Controller.prototype.ComponentSelectionPageCallback = function() {
     widget.deselectComponent("qt.qt5.5121.android_x86");
     widget.deselectComponent("qt.qt5.5121.android_arm64_v8a");
     widget.deselectComponent("qt.qt5.5121.src");
-    widget.deselectComponent("qt.qt5.5121.qtcharts");
-    widget.deselectComponent("qt.qt5.5121.qtdatavis3d");
     widget.deselectComponent("qt.qt5.5121.qtpurchasing");
     widget.deselectComponent("qt.qt5.5121.qtvirtualkeyboard");
-    widget.deselectComponent("qt.qt5.5121.qtwebengine");
-    widget.deselectComponent("qt.qt5.5121.qtnetworkauth");
-    widget.deselectComponent("qt.qt5.5121.qtwebglplugin");
     widget.deselectComponent("qt.qt5.5121.qtscript");
     widget.deselectComponent("qt.qt5.5121.doc");
     widget.deselectComponent("qt.qt5.5121.examples");
